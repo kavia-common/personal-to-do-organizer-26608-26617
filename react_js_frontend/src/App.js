@@ -1,35 +1,46 @@
 import React from 'react';
-import './index.css';
 import './App.css';
-import { ToDoProvider } from './context/ToDoContext';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import ToDoList from './components/ToDoList';
-import NewToDoForm from './components/NewToDoForm';
 
 /**
  * PUBLIC_INTERFACE
- * App is the root component that composes the Todo UI:
- * - Header: application title and theme toggle
- * - NewToDoForm: add new todo items
- * - ToDoList: list with edit/complete/delete capabilities
- * - Footer: filter controls (all/active/completed) and item count
+ * App is the root component.
+ * This is the minimal template version before any to-do features were added.
  */
 function App() {
   return (
-    <ToDoProvider>
-      <div className="app-root">
-        <div className="gradient-bg" />
-        <Header />
-        <main className="main">
-          <section className="card">
-            <NewToDoForm />
-            <ToDoList />
-          </section>
-        </main>
-        <Footer />
-      </div>
-    </ToDoProvider>
+    <div className="app">
+      <header className="navbar">
+        <div className="container">
+          <div className="brand">
+            <span className="logo" aria-hidden>⚛️</span>
+            <h1 className="title">React KAVIA Template</h1>
+          </div>
+        </div>
+      </header>
+
+      <main className="container">
+        <section className="hero-card">
+          <h2 className="subtitle">Welcome</h2>
+          <p className="description">
+            This is a lightweight React starter with modern, minimal styling.
+          </p>
+          <a
+            className="btn btn-large"
+            href="https://react.dev"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Learn React
+          </a>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <div className="container">
+          <span className="muted">Built with the KAVIA lightweight template</span>
+        </div>
+      </footer>
+    </div>
   );
 }
 
